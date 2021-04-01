@@ -2,6 +2,8 @@ package repository;
 
 import model.Customer;
 import model.Province;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
@@ -14,4 +16,6 @@ public interface ICustomerRepository extends PagingAndSortingRepository<Customer
     Iterable<Customer> findByCountry(String country, String name);
 
     Iterable<Customer> findAllByProvince(Province province);
+
+    Page<Customer> findAllByFirstNameContaining(String firstName, Pageable pageable);
 }

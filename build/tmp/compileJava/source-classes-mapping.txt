@@ -1,7 +1,7 @@
 formatter/ProvinceFormatter.java
  formatter.ProvinceFormatter
-configuration/AppConfig.java
- configuration.AppConfig
+test/service/IGeneralService.java
+ test.service.IGeneralService
 model/Province.java
  model.Province
 repository/ProvinceRepository.java
@@ -14,8 +14,8 @@ configuration/AppInit.java
  configuration.AppInit
 test/service/ProvinceService.java
  test.service.ProvinceService
-test/service/IGeneralService.java
- test.service.IGeneralService
+configuration/AppConfig.java
+ configuration.AppConfig
 repository/ICustomerRepository.java
  repository.ICustomerRepository
 test/service/ICustomerService.java

@@ -3,6 +3,8 @@ package test.service;
 import model.Customer;
 import model.Province;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import repository.ICustomerRepository;
 
@@ -12,6 +14,11 @@ import java.util.List;
 public class CustomerService implements ICustomerService {
     @Autowired
     private ICustomerRepository customerRepository;
+
+    @Override
+    public Page<Customer> findAll(Pageable pageable) {
+        return customerRepository.findAll(pageable);
+    }
 
     @Override
     public List<Customer> findAll() {
@@ -36,5 +43,10 @@ public class CustomerService implements ICustomerService {
     @Override
     public Iterable<Customer> findAllByProvince(Province province){
         return customerRepository.findAllByProvince(province);
+    }
+
+    @Override
+    public Page<Customer> findAllByFirstNameContaining(String firstName, Pageable pageable) {
+        return customerRepository.findAllByFirstNameContaining(firstName, pageable);
     }
 }
